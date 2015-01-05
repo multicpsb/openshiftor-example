@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #ccc;
+    font-family: Verdana, Arial, sans-serif;
+    text-shadow:0 0px, 1px 1px #666;
+    color: #eed;
+    font-size:110%;
+}
+body.tor {
+    background-color: #333;
+}
+h1 {
+    font-size:350%;
+    color:#96f;
+    text-decoration:none;
+    font-weight: inherit;
+}
+a img { 
+    border: none;
+}
+a {
+    color: #09d;
+    text-decoration: none;
+}
+a:hover {
+    color: #0bf;
+    text-decoration: underline;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+header {
+    padding:30px 0 0 0;
+}
+.wrapper {
+    width: 93.75%; /* 960px/1024px  */
+    margin: 0 auto;
+}
+.leftCol {
+    width:20%;
+    float:left;
+    text-align:right;
+}
+.rightCol {
+    width:76%;
+    float:right;
+}
+.clearfloat { 
+    clear: both;
+    height: 0;
+    line-height: 0px;
+}
+header .rightCol {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #222;
+    padding: 1ex 1em;
+}
+section .rightCol {
+    background-color: #306;
+    padding: 1ex 1em;
+}
+section p {
+    margin: 0 auto 1ex;
+}
+p.important {
+    text-align: center;
+    font-size: 200%;
+    margin: 2ex auto 3ex;
+}
+.message {
+    background-color: #69f;
+    border-radius: 10px;
+    color: #339;
+    display: block;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 2ex auto 1ex 0;
+    padding: 1ex 1em;
+    text-align: center;
+}
+.tor .message {
+    background-color: #9f6;
+    color: #363;
+}
+.box {
+    margin-right: 2%;
+    float: left;
+    width: 31%;
+    background-color: #407;
+    padding: 0.5%;
+    border-radius: 10px;
+}
+.lastbox {
+    margin-right:0 !important;
+}
+.box img {
+    margin: 10px auto;
+    display: block;
+}
+.box h2 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 200%;
+}
+.box .button {
+    text-align: right;
+}
+@media screen and (max-width: 1000px) {
+    .leftCol {
+        float: none;
+        width: auto;
+        text-align: center;
+    }
+    .rightCol {
+        float: none;
+        width: auto;
+    }
+}
+@media screen and (max-width: 640px) {
+    h1 {
+        font-size: 250%;
+    }
+    .box {
+        float: none;
+        width: auto;
+        margin: 5% 0;
+    }
+    .leftCol {
+        float:none;
+        width:auto;
+        text-align: center;
+    }
+    .rightCol {
+        float:none;
+        width:auto;
+        padding: 0;
+    }
+}

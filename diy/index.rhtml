@@ -1,0 +1,57 @@
+<%
+@tor_hostname = File.new(ENV['OPENSHIFT_TOR_DIR']+"tor/hidden_service/hostname").readline.strip
+@gat_hostname = @tor_hostname[0,16] + ".tor2web.org"
+@raw_hostname = ENV['OPENSHIFT_APP_DNS']
+%><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OpenShifTor demo</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body<%= if ( servlet_request.host =~ /\.onion$/ ) then " class=\"tor\"" else "" end %>
+><div class="wrapper"
+    ><header
+        ><div class="leftCol"><img id="logo" src="OpenShifTor.png"></div
+        ><div class="rightCol"
+            ><h1>OpenShifTor</h1
+            <%
+    if ( servlet_request.host =~ /\.onion$/ ) then
+        %>><div class="message">Now I do not see you&hellip;</div<%
+    else
+        %>><div class="message">Now I see you&hellip;</div<%
+    end
+            %>
+        ></div
+    ></header
+    ><section
+        ><div class="rightCol"
+            ><p>Welcome into simple application demonstrating use of
+                <a href="https://github.com/xkollar/tor-openshift">OpenShifTor</a>&nbsp;&ndash;
+                <a href="https://www.openshift.com/">OpenShift</a> cartridge that makes your
+                application accessible as <a href="https://www.torproject.org/docs/hidden-services.html.en">Tor Hidden Service</a>.</p
+            ><p>You can also browse the <a href="https://github.com/xkollar/openshiftor-example">source of this application</a>.</p
+            ><p class="important">Access the application the way <em>you</em> want!</p
+            ><div class="box"
+                ><h2>Directly</h2
+                ><a href="http://<%= @raw_hostname %>/"><img src="web.png" alt="Direct"></a
+                ><p>If most important things to you is speed and service reliability.</p
+                ><p class="button"><a href="http://<%= @raw_hostname %>/">&hellip;give it a try!</a></p
+            ></div
+            ><div class="box"
+                ><h2>Via Gateway</h2
+                ><a href="https://<%= @gat_hostname %>/"><img src="gate.png" alt="Gateway"></a
+                ><p>If you want to explore Tor version of the site but without need to install Tor.</p
+                ><p class="button"><a href="https://<%= @gat_hostname %>/">&hellip;give it a try!</a></p
+            ></div
+            ><div class="box lastbox"
+                ><h2>Via Tor</h2
+                ><a href="https://<%= @tor_hostname %>/"><img src="tor.png" alt="Tor"></a
+                ><p>If most important to you is privacy or you just want to try it.</p
+                ><p class="button"><a href="https://<%= @tor_hostname %>/">&hellip;give it a try!</a></p
+            ></div
+            ><div class="clearfloat"></div
+        ></div
+    ></section
+></div
+></body>
+</html>
