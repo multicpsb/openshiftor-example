@@ -1,7 +1,7 @@
 <%
-@tor_hostname = File.new(ENV['OPENSHIFT_TOR_DIR']+"tor/hidden_service/hostname").readline.strip
-@gat_hostname = @tor_hostname[0,16] + ".tor2web.org"
-@raw_hostname = ENV['OPENSHIFT_APP_DNS']
+@tor_hostname = File.new(ENV['OPENSHIFT_TOR_DIR']+"tor/hidden_service/hostname").readline.strip rescue nil
+@gat_hostname = @tor_hostname[0,16] + ".tor2web.org" rescue nil
+@raw_hostname = ENV['OPENSHIFT_APP_DNS'] || "localhost:8080"
 %><!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +52,11 @@
             ><div class="clearfloat"></div
         ></div
     ></section
+    ><footer
+        ><div class="rightCol"
+        ><p>Next step towards freedom.</p
+        ></div
+    ></footer
 ></div
 ></body>
 </html>
