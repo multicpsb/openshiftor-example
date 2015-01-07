@@ -5,17 +5,17 @@
 body {
     background-color: #ccc;
     font-family: Verdana, Arial, sans-serif;
-    text-shadow:0 0px, 1px 1px #666;
+    text-shadow:0 0, 1px 1px #666;
     color: #eed;
-    font-size:110%;
+    font-size: 110%;
 }
 body.tor {
     background-color: #333;
 }
 h1 {
-    font-size:350%;
-    color:#96f;
-    text-decoration:none;
+    font-size: 350%;
+    color: #96f;
+    text-decoration: none;
     font-weight: inherit;
 }
 a img { 
@@ -42,18 +42,18 @@ header {
     margin: 0 auto;
 }
 .leftCol {
-    width:20%;
-    float:left;
-    text-align:right;
+    width: 20%;
+    float: left;
+    text-align: right;
 }
 .rightCol {
-    width:76%;
-    float:right;
+    width: 76%;
+    float: right;
 }
 .clearfloat { 
     clear: both;
     height: 0;
-    line-height: 0px;
+    line-height: 0;
 }
 header .rightCol {
     border-top-left-radius: 10px;
@@ -138,6 +138,10 @@ footer .rightCol {
     }
 }
 @media screen and (max-width: 640px) {
+    .wrapper {
+        margin: 1px;
+        width: auto;
+    }
     h1 {
         font-size: 250%;
     }
@@ -154,6 +158,8 @@ footer .rightCol {
     .rightCol {
         float:none;
         width:auto;
-        padding: 0;
+    }
+    section .rightCol {
+        padding: 1ex 0.5em;
     }
 }
